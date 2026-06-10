@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda Lupita y Alejandro</title>
+    <!-- Tipografías elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ESTILOS GLOBALES (MINIMALISTAS) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fcfbfa; /* Blanco roto / Arena suave */
+            color: #2c2c2c;
+            line-height: 1.6;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .divisor {
+            width: 50px;
+            height: 1px;
+            background-color: #bc9c7e; /* Dorado sutil */
+            margin: 25px auto;
+        }
+
+        /* --- PORTADA (HERO) --- */
+        .portada {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f5f0;
+            padding: 20px;
+            border: 15px solid #fcfbfa;
+        }
+        .portada p.subtitulo {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            color: #777;
+        }
+        .portada h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            .portada h1 { font-size: 4.5rem; }
+        }
+
+        /* --- RELOJ DE CUENTA REGRESIVA --- */
+        .contador-contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .tiempo-bloque {
+            background-color: transparent;
+            padding: 10px;
+            min-width: 70px;
+        }
+        .tiempo-numero {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            display: block;
+            color: #bc9c7e;
+        }
+        .tiempo-etiqueta {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        /* --- DETALLES DEL EVENTO / LUGAR --- */
+        .evento-tarjeta {
+            background-color: #f7f5f0;
+            padding: 40px 20px;
+            margin-top: 30px;
+            border: 1px solid #eae6df;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .evento-tarjeta h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #2c2c2c;
+        }
+        .direccion-texto {
+            font-size: 0.95rem;
+            max-width: 500px;
+            margin: 15px auto;
+            color: #555;
+        }
+        .boton-elegante {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background-color: #2c2c2c;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 1px solid #2c2c2c;
+        }
+        .boton-elegante:hover {
+            background-color: #bc9c7e;
+            border-color: #bc9c7e;
+        }
+
+        /* --- SECCIÓN VIDEO (YOUTUBE) --- */
+        .video-contenedor {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .video-contenedor iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- GALERÍA DE FOTOS --- */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .galeria-item {
+            overflow: hidden;
+            position: relative;
+            background-color: #eee;
+            aspect-ratio: 3 / 4;
+        }
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: grayscale(20%);
+        }
+        .galeria-item img:hover {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        /* --- SECCIÓN RSVP (WHATSAPP) --- */
+        .rsvp-seccion {
+            background-color: #f7f5f0;
+            border-top: 1px solid #eae6df;
+            padding-bottom: 80px;
+        }
+        .boton-whatsapp {
+            background-color: transparent;
+            color: #2c2c2c;
+            border: 1px solid #2c2c2c;
+        }
+        .boton-whatsapp:hover {
+            background-color: #2c2c2c;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. PORTADA -->
+    <header class="portada">
+        <p class="subtitulo">Nuestra Invitación de Boda</p>
+        <h1>Lupita & Alejandro</h1>
+        <div class="divisor"></div>
+        <p class="subtitulo">11 de Septiembre de 2026</p> 
+
+        <!-- RELOJ INTERACTIVO -->
+        <div class="contador-contenedor">
+            <div class="tiempo-bloque">
+                <span class="tiempo-numero" id="dias">00</span>
+                <span class="tiempo-etiqueta">Días</span>
+            </div>
+            <div class="tiempo-bloque">
+                <span class="tiempo-numero" id="horas">00</span>
+                <span class="tiempo-etiqueta">Horas</span>
+            </div>
+            <div class="tiempo-bloque">
+                <span class="tiempo-numero" id="minutos">00</span>
+                <span class="tiempo-etiqueta">Min</span>
+            </div>
+            <div class="tiempo-bloque">
+                <span class="tiempo-numero" id="segundos">00</span>
+                <span class="tiempo-etiqueta">Seg</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. LUGAR Y FECHA -->
+    <section id="detalles">
+        <h2>El Evento</h2>
+        <div class="divisor"></div>
+        <p>Nos haría muy felices compartir este momento tan importante con ustedes.</p>
+
+        <div class="evento-tarjeta">
+            <h3>Ceremonia y Recepción</h3>
+            <div class="divisor" style="width: 30px; margin: 15px auto;"></div>
+            <p><strong>Viernes 11 de Septiembre de 2026</strong></p>
+            <p style="margin-top: 5px; font-weight: 500; font-size: 1.1rem; color: #bc9c7e;">A las 17:00 hrs</p>
+            <p style="margin-top: 5px; font-size: 0.95rem; color: #666;">Hacienda del Refugio</p>
+            <p class="direccion-texto">Blvd. Campestre 2201, El Refugio Campestre, 37156 León, Gto.</p>
+            
+            <a href="https://maps.app.goo.gl/so6EjKKCbWDq2xuW9" target="_blank" class="boton-elegante">Ver ubicación en mapa</a>
+        </div>
+    </section>
+
+    <!-- 3. NUESTRA HISTORIA (VIDEO) -->
+    <section id="historia">
+        <h2>Nuestra Historia</h2>
+        <div class="divisor"></div>
+        <p>Un pequeño vistazo a las risas, los viajes y los momentos que nos han traído hasta aquí.</p>
+        
+        <div class="video-contenedor">
+            <iframe src="https://youtu.be/b3GyAtcoogc?si=d3Hig5qECVTKvb5s" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- 4. GALERÍA -->
+    <section id="galeria">
+        <h2>Momentos Juntos</h2>
+        <div class="divisor"></div>
+        
+        <div class="galeria-grid">
+            <div class="galeria-item">
+                <img src="imagenes/foto1.jpg" alt="Lupita y Alejandro 1">
+            </div>
+            <div class="galeria-item">
+                <img src="imagenes/foto2.jpg" alt="Lupita y Alejandro 2">
+            </div>
+            <div class="galeria-item">
+                <img src="imagenes/foto3.jpg" alt="Lupita y Alejandro 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONFIRMACIÓN (RSVP) -->
+    <section id="rsvp" class="rsvp-seccion" style="max-width: 100%;">
+        <div style="max-width: 900px; margin: 0 auto; padding-top: 20px;">
+            <h2>Confirmar Asistencia</h2>
+            <div class="divisor"></div>
+            <p style="margin-bottom: 20px;">Para ayudarnos a tener todo perfecto, por favor confímanos tu asistencia.</p>
+            
+            <!-- REEMPLAZA EL TELÉFONO EN EL ENLACE DE ABAJO -->
+            <!-- Cambia "524771790420" por tu número de WhatsApp incluyendo el código de país (52 para México) -->
+            <a href="https://wa.me/5247717904020?text=%C2%A1Hola%20Lupita%20y%20Alejandro!%20Confirmamos%20nuestra%20asistencia%20a%20su%20boda.%20Estamos%20muy%20emocionados%20de%20acompa%C3%B1arlos." 
+               target="_blank" 
+               class="boton-elegante boton-whatsapp">
+               Confirmar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- PROGRAMACIÓN DEL RELOJ (JAVASCRIPT) -->
+    <script>
+        // Fecha exacta: 11 de Septiembre de 2026 a las 17:00:00 (Hora CDMX)
+        // Nota: En JS los meses van del 0 al 11. Septiembre es el mes 8.
+        const fechaBoda = new Date(2026, 8, 11, 17, 0, 0).getTime();
+
+        const actualizarReloj = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaBoda - ahora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutes;
+            document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
+
+            if (distancia < 0) {
+                clearInterval(actualizarReloj);
+                document.querySelector(".contador-contenedor").innerHTML = "<p style='font-family: \"Cormorant Garamond\", serif; font-size: 2rem; color: #bc9c7e;'>¡Llegó el gran día!</p>";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
