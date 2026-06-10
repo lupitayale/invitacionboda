@@ -248,7 +248,6 @@
     <!-- 1. PORTADA CON HISTORIAL DE IMÁGENES DE FONDO -->
     <header class="portada">
         <div class="fondo-animado">
-            <!-- Estas imágenes irán alternándose suavemente en el fondo -->
             <div class="slide activo" style="background-image: url('imagenes/foto1.jpg');"></div>
             <div class="slide" style="background-image: url('imagenes/foto2.jpg');"></div>
             <div class="slide" style="background-image: url('imagenes/foto3.jpg');"></div>
@@ -282,7 +281,7 @@
         </div>
     </header>
 
-    <!-- 2. LUGAR Y FECHA (CON ANIMACIÓN AL HACER SCROLL) -->
+    <!-- 2. LUGAR Y FECHA -->
     <section id="detalles" class="animar-scroll">
         <h2>El Evento</h2>
         <div class="divisor"></div>
@@ -294,24 +293,13 @@
             <p><strong>Viernes 11 de Septiembre de 2026</strong></p>
             <p style="margin-top: 5px; font-weight: 500; font-size: 1.1rem; color: #bc9c7e;">A las 17:00 hrs</p>
             <p style="margin-top: 5px; font-size: 0.95rem; color: #666;">Callejón Arroyo</p>
-            <p class="direccion-texto">Valle del Arroyo, 217 Santa Gertrudis, 37547 León, Gto.</p>
+            <p class="direccion-texto">Valle del Arroyo, 217Santa Gertrudis, 37547 León de los Aldama, Gto.</p>
             
             <a href="https://maps.app.goo.gl/so6EjKKCbWDq2xuW9" target="_blank" class="boton-elegante">Ver ubicación en mapa</a>
         </div>
     </section>
 
-    <!-- 3. NUESTRA HISTORIA / VIDEO (CON ANIMACIÓN AL HACER SCROLL) -->
-    <section id="historia" class="animar-scroll">
-        <h2>Nuestra Historia</h2>
-        <div class="divisor"></div>
-        <p>Un pequeño vistazo a las risas, los viajes y los momentos que nos han traído hasta aquí.</p>
-        
-        <div class="video-contenedor">
-            <iframe src="https://www.youtube.com/embed/b3GyAtcoogc?si=NUimI9FRfU9SB_YH" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- 4. GALERÍA (CON ANIMACIÓN AL HACER SCROLL) -->
+    <!-- 3. GALERÍA DE FOTOS -->
     <section id="galeria" class="animar-scroll">
         <h2>Momentos Juntos</h2>
         <div class="divisor"></div>
@@ -329,6 +317,17 @@
         </div>
     </section>
 
+    <!-- 4. NUESTRA HISTORIA / VIDEO (TRASLADADO AL FINAL) -->
+    <section id="historia" class="animar-scroll">
+        <h2>Nuestra Historia</h2>
+        <div class="divisor"></div>
+        <p>Un pequeño vistazo a las risas, los viajes y los momentos que nos han traído hasta aquí.</p>
+        
+        <div class="video-contenedor">
+            <iframe src="https://www.youtube.com/embed/b3GyAtcoogc?si=NUimI9FRfU9SB_YH" allowfullscreen></iframe>
+        </div>
+    </section>
+
     <!-- 5. CONFIRMACIÓN / RSVP -->
     <section id="rsvp" class="rsvp-seccion" style="max-width: 100%;">
         <div style="max-width: 900px; margin: 0 auto; padding-top: 30px;" class="animar-scroll">
@@ -336,7 +335,7 @@
             <div class="divisor"></div>
             <p style="margin-bottom: 20px;">Para ayudarnos a tener todo perfecto, por favor confímanos tu asistencia.</p>
             
-            <!-- REEMPLAZA EL TELÉFONO DE ABAJO (Ej: 524771234567) -->
+            <!-- ENLACE DE WHATSAPP ACTUALIZADO CON TU NÚMERO -->
             <a href="https://wa.me/524771790420?text=%C2%A1Hola%20Lupita%20y%20Alejandro!%20Confirmamos%20nuestra%20asistencia%20a%20su%20boda.%20Estamos%20muy%20emocionados%20de%20acompa%C3%B1arlos." 
                target="_blank" 
                class="boton-elegante boton-whatsapp">
@@ -379,7 +378,6 @@
             slideActual = (slideActual + 1) % slides.length;
             slides[slideActual].classList.add('activo');
         }
-        // Cambia de foto cada 4 segundos
         setInterval(cambiarSlide, 4000);
 
         // 3. EFECTO DE APARICIÓN SUAVE AL HACER SCROLL (FADE IN UP)
@@ -392,7 +390,7 @@
                 }
             });
         }, {
-            threshold: 0.10 // Se activa cuando se ve el 10% de la sección
+            threshold: 0.10
         });
 
         elementosAnimados.forEach(elemento => {
